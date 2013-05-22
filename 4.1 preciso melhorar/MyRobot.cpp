@@ -108,6 +108,7 @@ void MyRobot::draw()
 		glVertex3f( circle[i].x,  1, circle[i].z);
 	glEnd();
 	glPopMatrix();
+
 	bool c=false;
 	for(int i=0;i<12;i++){
 		for(int j=0;j<stacks;j++){
@@ -135,6 +136,7 @@ void MyRobot::draw()
 				i=11;
 			else
 				i--;
+
 			j--;
 			glEnd();
 			glPopMatrix();
