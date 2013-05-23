@@ -15,6 +15,7 @@ private:
 		void draw();
 		void update(unsigned long t);
 		CGFappearance* clockAppearance;
+		
 		void changeState();
 		bool getState();
 

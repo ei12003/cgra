@@ -16,15 +16,17 @@ class MyRobot : public CGFobject {
 
 private:
 	float tx,ty,tz;
-	int angle;
-	float rad,stacks;
-	ponto square[12];
-	ponto circle[12];
-
+	int angle,stacks,slices;
+	float rad;
+	ponto square[12], **aresta, normal, square_map[12], **aresta_map;
+	double raio,coef,a,pi;
+	
 	public:
-		MyRobot(int angle, float tx, float ty, float tz,float stacks);
+		MyRobot(int angle, float tx, float ty, float tz,int stacks);
 		void draw();
+		CGFappearance* robotAppearance;
 
+		ponto getNormal(vector<ponto> v1);
 		int getAngle();
 		void moveForward();
 		void moveBackward();

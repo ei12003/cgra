@@ -185,10 +185,7 @@ void LightingScene::display()
 	// Draw axis
 	axis.draw();
 
-		glPushMatrix();
-	slidesAppearance->apply();
-	robot->draw();
-	glPopMatrix();
+
 	// ---- END Background, camera and axis setup
 
 	// ---- BEGIN Primitive drawing section
@@ -200,10 +197,10 @@ void LightingScene::display()
 	glPopMatrix();
 
 	//Second Table
-	/*glPushMatrix();
+	glPushMatrix();
 		glTranslated(12,0,8);
 		table->draw();
-	glPopMatrix();*/
+	glPopMatrix();
 
 	//Floor
 	glPushMatrix();
@@ -255,7 +252,7 @@ void LightingScene::display()
 	m2= new myCylinder(12,10,true);
 	//l= new myLamp(12,10,false);
 
-	/*glPushMatrix();
+	glPushMatrix();
 	glTranslated(6,3,12);
 	glScaled(1,6,1);
 	glRotated(90.0,1,0,0);
@@ -281,6 +278,10 @@ void LightingScene::display()
 	// We have been drawing in a memory area that is not visible - the back buffer, 
 	// while the graphics card is showing the contents of another buffer - the front buffer
 	// glutSwapBuffers() will swap pointers so that the back buffer becomes the front buffer and vice-versa
+			glPushMatrix();
+	slidesAppearance->apply();
+	robot->draw();
+	glPopMatrix();
 	glutSwapBuffers();
 }
 
