@@ -10,6 +10,8 @@ class TPinterface: public CGFinterface {
 
 		virtual void initGUI();
 		virtual void processGUI(GLUI_Control *ctrl);
+		
+		
 
 		virtual void processKeyboard(unsigned char key, int x, int y);
 		int luz1,luz2,luz3,luz4,testVar;

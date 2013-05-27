@@ -61,10 +61,14 @@ void TPinterface::processKeyboard(unsigned char key, int x, int y)
 
 void TPinterface::initGUI()
 {
-	addCheckbox("Light0",NULL,100)->set_int_val(1);
-	addCheckbox("Light1",NULL,101)->set_int_val(1);
-	addCheckbox("Light2",NULL,102)->set_int_val(1);
-	addCheckbox("Light3",NULL,103)->set_int_val(1);
+	GLUI_Panel *lights= addPanel("Luzes", 1);
+	addCheckboxToPanel(lights,"Light0", NULL,100)->set_int_val(1);
+	addCheckboxToPanel(lights,"Light1", NULL,101)->set_int_val(1);
+	addCheckboxToPanel(lights,"Light2", NULL,102)->set_int_val(1);
+	addCheckboxToPanel(lights,"Light3", NULL,103)->set_int_val(1);
+
+	
+
 }
 
 void TPinterface::processGUI(GLUI_Control *ctrl)
@@ -74,6 +78,9 @@ void TPinterface::processGUI(GLUI_Control *ctrl)
 	
 	switch (ctrl->user_id)
 	{
+
+
+
 		case 100:
 		{
 			if(	((LightingScene *) scene)->light0_state)
